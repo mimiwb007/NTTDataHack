@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Symptom Checker</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style1.css') }}">
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Website Title -->
+
+  <div class="container">
+    <h2 class='container-heading'><span class="heading_font">Symptom Checker</span></h2><br>
+    <img align='left' src= "/static/466-4669831_womens-health-money-blue-icon-png.png" width="5em" height="5em">
+    <div class='description'>
+      <p>A Machine Learning Based Symptom Checker For Women.</p><br>
+        
+    </div>
+  </div>
+
+  <!-- Text Area -->
+  <div class="ml-container">
+    <form action="{{ url_for('predict')}}" method="POST"> 
+
+      
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age" placeholder="Your age"><br>
+        
+        <label for="AffectedBodyPart1">Most Affected Body Part</label>
+        <select id="AffectedBodyPart1" name="calculations">
+            {% for calc in calculations %}
+                 <option value="{{ calc }}">{{ calc }}</option>
+            {% endfor %}
+        </select><br>
+
+
+       
+
+        <div>
+        <label for="Symptom1">First Symptom</label>
+        <input type="text" id="Symptom1" name="Symptom1" placeholder="Most Affecting Symptom"><br>
+        </div>
+        
+        <label for="Symptom2">Second Symptom</label>
+        <input type="text" id="Symptom2" name="Symptom2" placeholder="Second most affecting Symptom"><br>
+
+        <label for="Symptom3">Third Symptom</label>
+        <input type="text" id="Symptom3" name="Symptom3" placeholder="Third most affecting Symptom"><br>
+
+         <label for="Location">Your Location</label>
+         <input type="text" id="Location" name="Location" placeholder="Nearmost City"><br>
+
+        
+
+
+      
+
+      
+
+      <input type="submit" class="my-cta-button" value="Predict">
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <div class='footer'>
+    <div class="contact">
+      <a target="_blank" href="https://github.com/mimiwb007"><i
+          class="fab fa-github fa-lg contact-icon"></i></a>
+      <a target="_blank" href="https://in.linkedin.com/in/nibedita-dutta-5119a28b"><i
+          class="fab fa-linkedin fa-lg contact-icon"></i></a>
+    </div>
+    <p class='footer-description'>Made by Nibedita Dutta</p>
+  </div>
+
+</body>
+
+</html>

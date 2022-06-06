@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Symptom Checker</title>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style1.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	</head>
+
+    <body>
+
+        <!-- Website Title -->
+		<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Symptom Checker</span></h2><br>
+            <div class='description'>
+    			<p>A Machine Learning Based Symptom Checker For Women.</p>
+    		</div>
+    	</div>
+    	
+    	
+
+		<!-- Result -->
+		<div align="center">
+            <table>
+                <h1>
+                <!--Displaying the converted table-->
+                     {% for table in tables %}
+                    <h2>{{titles[loop.index]}}</h2>                            
+                    {{ table|safe }}
+                    {% endfor %}     
+                </h1> 
+            </table>
+        </div>
+
+		<!-- Footer -->
+       <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/mimiwb007"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/astha-sharma-47266b11b/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+           </div>
+           <p class='footer-description'>Made by Nibedita Dutta</p>
+       </div>
+
+	</body>
+</html>
